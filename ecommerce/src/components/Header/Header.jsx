@@ -1,6 +1,18 @@
 import "./Header.css"
+import { FaUser,FaShoppingCart } from "react-icons/fa";
+import { useState } from "react";
 
 const Header = () => {
+
+    // const [register, setRegister] = useState(0)
+
+    // const useEffect () => {
+    //     if(register === 0){
+    //         document.querySelector(".register").style.display = "none"
+    //     }else{
+    //         document.querySelector(".register").style.display = "block"
+    //     }
+    // }
   return (
     <header className="headerContainer">
       <section className="headerWrapper">
@@ -16,7 +28,13 @@ const Header = () => {
             </ul>
           </nav>
           <article className="icon">
-          <h2>logo</h2>
+            <FaShoppingCart  className="cartIcon"/>
+            <p>2</p>
+          <FaUser  className="userIcon"/>
+          <div className="register">
+            <button>sign up</button>
+            <button>login</button>
+          </div>
 
           </article>
           
