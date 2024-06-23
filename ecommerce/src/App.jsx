@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header"
+import Hero from "./components/Hero/Hero"
 const App =()=> {
 
 
@@ -6,6 +7,7 @@ const App =()=> {
 
     <>
     <Header/>
+    <Hero/>
     </>
   )
 }

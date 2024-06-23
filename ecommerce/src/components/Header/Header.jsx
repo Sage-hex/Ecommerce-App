@@ -1,18 +1,11 @@
-import "./Header.css"
-import { FaUser,FaShoppingCart } from "react-icons/fa";
+import "./Header.css";
+import { FaUser, FaShoppingCart } from "react-icons/fa";
+import UserDrop from "../UserDrop/UserDrop";
 import { useState } from "react";
 
 const Header = () => {
+  const [userDrop, setUserDrop] = useState(false);
 
-    // const [register, setRegister] = useState(0)
-
-    // const useEffect () => {
-    //     if(register === 0){
-    //         document.querySelector(".register").style.display = "none"
-    //     }else{
-    //         document.querySelector(".register").style.display = "block"
-    //     }
-    // }
   return (
     <header className="headerContainer">
       <section className="headerWrapper">
@@ -21,23 +14,27 @@ const Header = () => {
         <section className="navWrapper">
           <nav className="navBar">
             <ul className="navLinks">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Services</li>
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Services</li>
             </ul>
-          </nav>
-          <article className="icon">
-            <FaShoppingCart  className="cartIcon"/>
-            <p>2</p>
-          <FaUser  className="userIcon"/>
-          <div className="register">
-            <button>sign up</button>
-            <button>login</button>
-          </div>
 
-          </article>
-          
+            <div className="cartContainer">
+              <FaShoppingCart className="cartIcon" />
+              <div className="cartCounter">0</div>
+            </div>
+          </nav>
+
+          <div className="userContainer">
+            <FaUser className="userIcon" onMouseEnter={() => setUserDrop(true)}/>
+            {
+                userDrop?
+              <div className="UserDropContainer" onMouseLeave={()=> setUserDrop(false)}>
+                <UserDrop />
+              </div>:null
+            }
+          </div>
         </section>
       </section>
     </header>
